@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Proposal 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px #00000030;
+    }
+
+    .panda {
+      width: 200px;
+      margin: 20px auto;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+      position: relative;
+    }
+
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+
+    #finalScreen {
+      display: none;
+      margin-top: 80px;
+    }
+
+    #finalScreen img {
+      width: 250px;
+      border-radius: 20px;
+    }
+
+    #finalScreen h2 {
+      color: white;
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- First Screen -->
+  <div id="mainScreen">
+    <h1>Will you be my Valentine forever? 🥹💘</h1>
+
+    <img class="panda" 
+      src="https://i.imgur.com/1X6R0qO.png"
+      alt="Cute Panda">
+
+    <div class="buttons">
+      <button id="yesBtn">YES 💖</button>
+      <button id="noBtn">NO 😢</button>
+    </div>
+  </div>
+
+  <!-- Final Screen -->
+  <div id="finalScreen">
+    <img src="https://i.imgur.com/8RrV4Hh.png" alt="Hugging Toons">
+    <h2>Thankyou Bubu🥹💖<br>You're my sweetest Valentine now!</h2>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    // Move NO button randomly
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    // YES Button action
+    yesBtn.addEventListener("click", () => {
+      document.getElementById("mainScreen").style.display = "none";
+      document.getElementById("finalScreen").style.display = "block";
+    });
+
+    // Set NO button initial position
+    noBtn.style.left = "55%";
+    noBtn.style.top = "380px";
+  </script>
+
+</body>
+</html>
